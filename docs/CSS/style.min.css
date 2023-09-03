@@ -21,15 +21,11 @@ body{
     background-color: rgb(41, 36, 36);
     color: rgb(255, 224, 0);
     padding: 10px;
-    padding-bottom: 25px;
     font-size: 25px;
     font-weight: bold;
     text-align: left;
     text-transform: uppercase;
     margin-bottom: -5px;
-    text-decoration-line: underline;
-    text-decoration-style: dotted;
-    text-underline-offset: 10px; 
 }
 
 .list-header{

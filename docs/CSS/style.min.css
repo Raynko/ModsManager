@@ -1,52 +1,98 @@
-body{
-    background-color: rgb(41, 36, 36);
+/* Réinitialisation des styles par défaut */
+* {
     margin: 0;
-    font-family: 'Rubik';
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.list{
-    background-color: rgb(55, 48, 48);
-    height: 100px;
+body {
+    background-color: rgb(41, 36, 36);
+    margin: 0;
+    margin-top: 30px;
+    font-family: 'Rubik', sans-serif;
+}
+
+.list {
     width: 75%;
     max-width: 600px;
     margin: auto;
-    margin-top: 50px;
     padding: 0;
-    border-radius: 5px;
-    overflow-x: auto;
 }
 
-.list-cat-title{
-    background-color: rgb(41, 36, 36);
+.list-cat-title {
     color: rgb(255, 224, 0);
     padding: 10px;
     font-size: 25px;
-    font-weight: bold;
     text-align: left;
     text-transform: uppercase;
     margin-bottom: -5px;
 }
 
-.list-header{
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    width: 100%;
+.list-content {
+    background-color: rgb(55, 48, 48);
+    border-radius: 3px;
+    overflow-x: auto;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.cat-content {
+    display: flex;
+}
+
+.cell {
+    text-align: center;
+    flex-grow: 1;
+    min-width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cat-header-title {
     background-color: rgb(30, 12, 27);
     border-bottom: solid 1px;
     border-bottom-color: rgb(255, 224, 0);
-}
-
-.list-header-cat{
-    flex-grow: 1;
-    height: 100%;
-    margin: auto;
-    padding: 10px;
     color: rgb(255, 255, 255);
     font-size: 11px;
     font-weight: bold;
     text-align: center;
+    padding: 10px;
+    margin-top: 0;
+}
+
+.element {
+    font-size: 10px;
+    text-align: center;
+}
+
+.element-image{
+    border-radius: 3px;
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+}
+
+.element-name{
+    color: rgb(255, 255, 255);
+}
+
+.element-type{
+    color: rgb(153, 153, 153);
+}
+
+.element-desc{
+    color: rgb(153, 153, 153);
+}
+
+.element-version{
+    color: rgb(153, 153, 153);
+}
+
+.element-link{
+    color: rgb(255, 224, 0);
+    text-decoration: none;
 }
 
 /* width */
@@ -54,20 +100,20 @@ body{
     width: 100%;
     height: 5px;
 }
-  
+
 /* Track */
 ::-webkit-scrollbar-track {
-    background: none; 
+    background: none;
 }
-   
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #555; 
+    background: #555;
     border-radius: 5px;
 }
-  
+
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #757575; 
+    background: #757575;
     border-radius: 5px;
 }

@@ -2,11 +2,11 @@
     "category": 
     [
         {
-            "mod-image-source": "",
-            "mod-name": "",
-            "mod-type": "",
-            "mod-desc": "",
-            "mod-version": "",
+            "mod-image-source": "https://media.forgecdn.net/avatars/543/777/637874731161865623.jpeg",
+            "mod-name": "test1",
+            "mod-type": "test2",
+            "mod-desc": "test3",
+            "mod-version": "test4",
             "mod-link": ""
         }
     ]

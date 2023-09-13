@@ -28,32 +28,44 @@
                 <div class="cell cat-header-title">Lien</div>
             </div>
 
-            <div class="cat-content element">
-                <div class="cell"><img class="element-image" src="https://media.forgecdn.net/avatars/543/777/637874731161865623.jpeg"></div>
-                <div class="cell element-name">test1</div>
-                <div class="cell element-type">test2</div>
-                <div class="cell element-desc">test3</div>
-                <div class="cell element-version">test4</div>
-                <div class="cell"><a target="_blank" href="" class="element-link">CurseForge</a></div>
-            </div>
 
-            <div class="cat-content element">
-                <div class="cell"><img class="element-image" src="https://media.forgecdn.net/avatars/543/777/637874731161865623.jpeg"></div>
-                <div class="cell element-name">test1</div>
-                <div class="cell element-type">test2</div>
-                <div class="cell element-desc">test3</div>
-                <div class="cell element-version">test4</div>
-                <div class="cell"><a target="_blank" href="" class="element-link">CurseForge</a></div>
+
+            <!-- La liste existante de "cat-content element" -->
+            <div class="list-content" id="element-list">
+                <!-- Les éléments existants seront ajoutés ici -->
             </div>
 
         </div>
     </div>
 
+    <!-- Formulaire pour ajouter un nouvel élément -->
+    <div class="add-mod-form">
+        <h2>Ajouter un Mod</h2>
+        <form id="mod-form">
+            <input type="text" id="image" placeholder="Image URL">
+            <input type="text" id="name" placeholder="Nom">
+            <input type="text" id="type" placeholder="Type">
+            <input type="text" id="desc" placeholder="Description">
+            <input type="text" id="version" placeholder="Version installée">
+            <input type="text" id="link" placeholder="Lien">
+            <button type="button" id="add-button">Ajouter</button>
+        </form>
+    </div>
+
+    <!-- Modèle -->
+    <div class="cat-content element" id="element-template" style="display: none;">
+        <div class="cell"><img class="element-image" src=""></div>
+        <div class="cell element-name"></div>
+        <div class="cell element-type"></div>
+        <div class="cell element-desc"></div>
+        <div class="cell element-version"></div>
+        <div class="cell"><a target="_blank" href="" class="element-link">CurseForge</a></div>
+    </div>
     
     <footer>
         
     </footer>
-    
+
     <script src="JS/script.js"></script>
 </body>
 </html>

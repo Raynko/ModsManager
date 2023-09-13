@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fr">
+<body>
+    <script>
+        window.location.href = "model.html";
+        // Exemple d'utilisation de fetch pour faire une requête GET vers le serveur Node.js
+        fetch("/mon-endpoint")
+            .then((response) => response.text())
+            .then((data) => {
+            console.log(data); // La réponse du serveur sera affichée dans la console
+            })
+            .catch((error) => {
+            console.error("Erreur lors de la requête :", error);
+            });
+    </script>
+</body>
+</html>

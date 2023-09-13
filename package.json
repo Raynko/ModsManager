@@ -1,0 +1,17 @@
+{
+  "name": "mods-manager",
+  "version": "1.0.0",
+  "description": "Site for manage mods",
+  "main": "app.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "node NODE/app.js"
+  },
+  "author": "Raynko",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

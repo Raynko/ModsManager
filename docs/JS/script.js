@@ -15,7 +15,7 @@ function addElementToDOM(modData) {
 
 // Fonction pour charger les données JSON et afficher les éléments
 function loadAndDisplayElements() {
-    fetch("JSON/data.json")
+    fetch("https://raynko.github.io/ModsManager//JSON/data.json")
         .then(response => response.json())
         .then(data => {
             // Pour chaque élément dans le JSON, ajoutez-le à la liste

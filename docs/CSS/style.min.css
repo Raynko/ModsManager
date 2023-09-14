@@ -17,6 +17,7 @@ body {
     margin: auto;
     padding: 0;
     margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .list-cat-title {
@@ -105,7 +106,12 @@ body {
 .element-link{
     color: rgb(255, 224, 0);
     text-decoration: none;
+    transition: 0.2s;
+}
 
+.element-link:hover{
+
+    font-size: 12px;
 }
 
 /* width */
@@ -129,4 +135,31 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #757575;
     border-radius: 5px;
+}
+
+.add-mod-form
+{
+    background-color: #0d6958;
+    padding: 10px;
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    border-radius: 5px;
+    width: 500px;
+}
+
+.add-mod-title
+{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.add-mod-line
+{
+    margin-bottom: 10px;
+    height: 1px;
 }

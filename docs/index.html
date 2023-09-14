@@ -42,7 +42,8 @@
 
     <!-- Formulaire pour ajouter un nouvel élément -->
     <div class="add-mod-form">
-        <h2>Ajouter un Mod</h2>
+        <div class="add-mod-title">Ajouter un Mod</div>
+        <hr class="add-mod-line">
         <form id="new-mod-form">
             <div class="alert" style="display: none;">nouveau mod ajouté</div>
 
@@ -55,6 +56,16 @@
             <input type="text" id="link-field" placeholder="Lien">
             <button type="submit" id="add-new-mod-button">Ajouter</button>
         </form>
+    </div>
+
+    <!-- Modèle -->
+    <div class="cat-content element" id="element-template" style="display: none;">
+        <div class="cell"><img class="element-image" src=""></div>
+        <div class="cell element-name"></div>
+        <div class="cell element-type"></div>
+        <div class="cell element-desc"></div>
+        <div class="cell element-version"></div>
+        <div class="cell"><a target="_blank" href="" class="element-link">CurseForge</a></div>
     </div>
     
     <footer>

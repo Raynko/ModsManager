@@ -139,15 +139,16 @@ body {
 
 .add-mod-form
 {
-    background-color: #0d6958;
+    background-color: #09463a;
     padding: 10px;
     position: fixed;
     left: 50%;
     bottom: 20px;
     transform: translate(-50%, -50%);
     margin: 0 auto;
+    margin-bottom: -180px;
     border-radius: 5px;
-    width: 500px;
+    width: 250px;
 }
 
 .add-mod-title
@@ -162,4 +163,33 @@ body {
 {
     margin-bottom: 10px;
     height: 1px;
+}
+
+.field{
+    padding: 8px;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	width: 100%;
+	color: #ffffff;
+	font-size: 13px;
+    border: none;
+    outline: none;
+    background-color: #00000018;
+}
+
+.field:focus {
+    outline: 2px dashed #ad2b89;
+    outline-offset: 0.2em;
+}
+
+::placeholder {
+    color: rgba(255, 255, 255, 0.466);
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+#add-new-mod-button {
+    
 }

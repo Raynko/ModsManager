@@ -160,7 +160,11 @@ body {
     transform: translateY(2px);
 }
 
-#add-mod-form
+.link-label {
+    color: white;
+}
+
+.add-mod-form
 {
     background-color: #09463a;
     padding: 10px;

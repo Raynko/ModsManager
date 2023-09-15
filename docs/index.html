@@ -45,20 +45,29 @@
     
     <button type="button" onclick="ShowHideForm()" id="show-hide-form">+</button>
 
+    <!-- Insérer lien -->
+    <div id="step-1" class="add-mod-form" style="display: none;">
+        <div class="add-mod-title">Ajouter un Mod</div>
+        <hr class="add-mod-line">
+        <div class="link-label">Lien URL du mod</div>
+        <input type="text" class="field" id="link-field" placeholder="Lien" autocomplete="off" required>
+        <button type="button" id="next-button">Suivant</button>
+    </div>
+
     <!-- Formulaire pour ajouter un nouvel élément -->
-    <div id="add-mod-form" style="display: none;">
+    <div id="step-2" class="add-mod-form" style="display: none;">
         <div class="add-mod-title">Ajouter un Mod</div>
         <hr class="add-mod-line">
         <form id="new-mod-form">
             <div class="alert" style="display: none;">nouveau mod ajouté</div>
-
-            <input type="text" class="field" id="cat-field" placeholder="Catégorie" autocomplete="off" required>
+            
+            <input type="text" class="field" id="link-field-2" placeholder="Lien" autocomplete="off" required>
             <input type="text" class="field" id="image-field" placeholder="Image URL" autocomplete="off" required>
+            <input type="text" class="field" id="cat-field" placeholder="Catégorie" autocomplete="off" required>
             <input type="text" class="field" id="name-field" placeholder="Nom" autocomplete="off" required>
             <input type="text" class="field" id="type-field" placeholder="Type" autocomplete="off" required>
             <input type="text" class="field" id="desc-field" placeholder="Description" autocomplete="off" required>
             <input type="text" class="field" id="version-field" placeholder="Version installée" autocomplete="off" required>
-            <input type="text" class="field" id="link-field" placeholder="Lien" autocomplete="off" required>
             <button type="submit" class="button-85" id="add-new-mod-button">+</button>
         </form>
     </div>
@@ -75,6 +84,7 @@
 
     <script src="JS/Database.js"></script>
     <script src="JS/Scripts.js"></script>
+    <script src="JS/Form.js"></script>
 
 </body>
 </html>

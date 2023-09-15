@@ -15,8 +15,6 @@
     <title>Mods Manager</title>
 </head>
 <body>
-    <button type="button" id="login-button">Se connecter avec Google</button>
-
     <div class="all-mods">  
         <div class="list">
             <div class="list-cat-title">Items</div>
@@ -68,10 +66,10 @@
         <div class="cell"><a target="_blank" href="" class="element-link">CurseForge</a></div>
     </div>
 
-    <!-- Incluez ici votre JavaScript pour gérer l'authentification et l'ajout de données à Google Sheets -->
-    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="JS/Connect-Database.js"></script>
+    <script src="JS/Write-Database.js"></script>
     <script src="JS/Scripts.js"></script>
-    <script src="JS/Database.js"></script>
 
 </body>
 </html>

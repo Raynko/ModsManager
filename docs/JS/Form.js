@@ -1,46 +1,87 @@
-// Écoutez le clic sur le bouton "Suivant" à l'étape 1
-document.getElementById('next-button').addEventListener('click', function () {
-    // Vérifiez si le champ du lien CurseForge est rempli
-    const linkField = document.getElementById('link-field');
-    const linkValue = linkField.value.trim();
+// Récupérez la référence du champ de lien et du bouton Suivant
+const linkField = document.getElementById("link-field");
+const nextButton = document.getElementById("next-button");
 
-    if (linkValue !== '') {
-        // Utilisez le lien saisi par l'utilisateur pour extraire les informations
-        fetchCurseForgeInfo(linkValue);
+// Récupérez la référence aux sections de formulaire
+const step1 = document.getElementById("step-1");
+const step2 = document.getElementById("step-2");
+
+// Récupérez la référence aux champs du formulaire étape 2
+const linkField2 = document.getElementById("link-field-2");
+const imageField = document.getElementById("image-field");
+const nameField = document.getElementById("name-field");
+
+// Écoutez l'événement de modification du champ de lien
+linkField.addEventListener("input", function() {
+    // Vérifiez si le champ de lien est rempli
+    if (linkField.value.trim() !== "") {
+        // Activez le bouton Suivant
+        nextButton.disabled = false;
+
+        // Extrait l'ID du mod à partir de l'URL
+        const modId = extractModIdFromUrl(linkField.value);
+
+        // Remplissez les champs du formulaire étape 2 avec les informations du mod
+        fetchModInfo(modId);
     } else {
-        alert("Veuillez entrer un lien CurseForge.");
+        // Désactivez le bouton Suivant s'il n'y a pas de lien
+        nextButton.disabled = true;
     }
 });
 
-// Fonction pour extraire les informations depuis CurseForge en utilisant fetch
-function fetchCurseForgeInfo(link) {
-    // Effectuez la requête JSON en utilisant fetch
-    fetch(link)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Réponse non valide de CurseForge");
-            }
-            return response.json();
-        })
-        .then(data => {
-            // Extraire les données souhaitées de la réponse JSON
-            const modName = data.modName;
-            const imageUrl = data.imageUrl;
+// Fonction pour extraire l'ID du mod à partir de l'URL
+function extractModIdFromUrl(url) {
+    // Vous devrez implémenter la logique pour extraire l'ID du mod à partir de l'URL.
+    // Par exemple, si l'URL est "https://www.curseforge.com/minecraft/mc-mods/mod-name",
+    // vous pouvez extraire l'ID à partir de la dernière partie de l'URL.
+    // Assurez-vous de manipuler correctement l'URL pour obtenir l'ID.
 
-            // Vérifiez si les données sont correctement stockées en les affichant dans la console
-            console.log("Mod Name:", modName);
-            console.log("Image URL:", imageUrl);
+    // Exemple de logique :
+    const parts = url.split("/");
+    const modId = parts[parts.length - 1];
 
-            // Passez à l'étape 2
-            document.getElementById('step-1').style.display = 'none';
-            document.getElementById('step-2').style.display = 'block';
-
-            // Remplissez automatiquement les champs d'image et de nom avec les données obtenues
-            document.getElementById('name-field').value = modName;
-            document.getElementById('image-field').value = imageUrl;
-        })
-        .catch(error => {
-            console.error("Erreur lors de la requête JSON:", error);
-            alert("Une erreur s'est produite lors de la récupération des données CurseForge.");
-        });
+    return modId;
 }
+
+// Fonction pour récupérer les informations du mod à partir de son ID
+function fetchModInfo(modId) {
+    // Utilisez l'ID du mod pour récupérer les informations du mod
+    const headers = {
+        'Accept': 'application/json',
+        'x-api-key': 'c52359dd-aef3-4fcd-bb60-8dac7a602c71' // Remplacez par votre clé API CurseForge valide
+    };
+
+    fetch(`/v1/mods/${modId}`, {
+        method: 'GET',
+        headers: headers
+    })
+    .then(function (res) {
+        return res.json();
+    })
+    .then(function (body) {
+        console.log(body);
+        if (body && body.data) {
+            // Remplissez les champs du formulaire étape 2 avec les données récupérées
+            linkField2.value = body.data.links.websiteUrl;
+            imageField.value = body.data.logo.thumbnailUrl;
+            nameField.value = body.data.name;
+            // Passez à l'étape 2
+            showStep2();
+        } else {
+            console.error("Réponse vide ou non valide de l'API CurseForge");
+        }
+    })
+    .catch(function (error) {
+        console.error("Erreur lors de la récupération des informations du mod :", error);
+    });
+}
+
+// Fonction pour passer de l'étape 1 à l'étape 2
+function showStep2() {
+    console.log("Passage de l'étape 1 à l'étape 2");
+    step1.style.display = "none";
+    step2.style.display = "block";
+}
+
+// Écoutez l'événement clic sur le bouton Suivant
+nextButton.addEventListener("click", showStep2);

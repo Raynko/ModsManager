@@ -47,11 +47,51 @@ body {
     flex-wrap: wrap; 
 }
 
-.modpack {
-    background-color: rgb(255, 0, 0);
-    width: 50px;
-    height: 50px;
+.new-modpack {
+    background-color: rgb(73, 64, 64);
+    color: white;
+    width: 100px;
+    height: 100px;
     border-radius: 3px;
     margin-right: 10px;
     margin-bottom: 10px;
+    cursor: pointer;
+    border: none;
+    font-size: 50px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.new-modpack:hover {
+    background-color: rgb(83, 73, 73);
+}
+
+.new-modpack:active {
+    background-color: rgb(94, 82, 82);
+}
+
+.icon-container {
+    display: flex;
+    margin-bottom: -10px;
+}
+
+.add-icon {
+    font-size: 65px;
+}
+
+.new-modpack-text {
+    font-size: 10px;
+}
+
+.modpack {
+    background-color: rgb(73, 64, 64);
+    width: 100px;
+    height: 100px;
+    border-radius: 3px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: none;
 }

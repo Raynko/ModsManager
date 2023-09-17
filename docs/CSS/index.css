@@ -103,14 +103,10 @@ body {
     font-size: 20px;
 }
 
-.modpack-version {
-    color: white;
+.modpack-desc {
+    color: rgb(163, 163, 163);
     position: absolute;
-}
-
-.modpack-author {
-    color: white;
-    position: absolute;
+    font-size: 10px;
 }
 
 .modpack-access-btn {

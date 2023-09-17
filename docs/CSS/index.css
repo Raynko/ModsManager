@@ -101,11 +101,22 @@ body {
 .modpack-name {
     color: white;
     font-size: 20px;
+    margin-top: 2px;
+    line-height: 17px
 }
 
-.modpack-desc {
+.modpack-version {
     color: rgb(163, 163, 163);
-    position: absolute;
+    position: relative;
+    width: 90px;
+    font-size: 10px;
+    margin-top: 4px;
+}
+
+.modpack-author {
+    color: rgb(163, 163, 163);
+    position: relative;
+    width: 90px;
     font-size: 10px;
 }
 

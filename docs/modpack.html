@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+    <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <link rel="stylesheet" type="text/css" href="CSS/modpack.css">
+    <link rel="stylesheet" type="text/css" href="CSS/form.button.css">
+    <link rel="stylesheet" type="text/css" href="CSS/list.title.css">
+
+    <link rel="shortcut icon" href="">
+    <title>Mods Manager</title>
+</head>
+<body>
+<div class="background-image"></div>  
+
+    <div class="all-mods">  
+        <div class="list">
+
+            <div class="list-cat-title sweet-title">Items</div>
+            
+
+            <div class="list-content">
+
+                <div class="cat-content">
+                    <div class="cell cat-header-title">Image</div>
+                    <div class="cell cat-header-title">Name</div>
+                    <div class="cell cat-header-title">Type</div>
+                    <div class="cell cat-header-title">Description</div>
+                    <div class="cell cat-header-title">Version installé</div>
+                    <div class="cell cat-header-title">Lien</div>
+                </div>
+
+                <!-- La liste existante -->
+                <div id="element-list">
+                    <!-- Les éléments existants seront ajoutés ici -->
+                </div>
+
+            </div>
+        </div>
+    </div>  
+    
+    <button type="button" onclick="ShowHideForm()" id="show-hide-form">+</button>
+
+    <!-- Formulaire pour ajouter un nouvel élément -->
+    <div id="add-mod-form">
+        <div class="add-mod-title">Ajouter un Mod</div>
+        <hr class="add-mod-line">
+        <form id="new-mod-form">
+            <div class="alert" style="display: none;">nouveau mod ajouté</div>
+
+            <input type="text" class="field" id="cat-field" placeholder="Catégorie" autocomplete="off" required>
+            <input type="text" class="field" id="image-field" placeholder="Image URL" autocomplete="off" required>
+            <input type="text" class="field" id="name-field" placeholder="Nom" autocomplete="off" required>
+            <input type="text" class="field" id="type-field" placeholder="Type" autocomplete="off" required>
+            <input type="text" class="field" id="desc-field" placeholder="Description" autocomplete="off" required>
+            <input type="text" class="field" id="version-field" placeholder="Version installée" autocomplete="off" required>
+            <input type="text" class="field" id="link-field" placeholder="Lien" autocomplete="off" required>
+            <button type="submit" class="button-85" id="add-new-mod-button">+</button>
+        </form>
+    </div>
+
+    <!-- Modèle -->
+    <div class="cat-content element" id="element-template" style="display: none;">
+        <div class="cell"><img class="element-image" src="" onerror="this.src='IMG/blankPic.png'"></div>
+        <div class="cell element-name"></div>
+        <div class="cell element-type"></div>
+        <div class="cell element-desc"></div>
+        <div class="cell element-version"></div>
+        <div class="cell"><a target="_blank" href="" class="element-link">CurseForge</a></div>
+    </div>  
+
+    <script src="JS/Database.js"></script>
+    <script src="JS/Scripts.js"></script>
+</body>
+</html>

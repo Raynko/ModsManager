@@ -12,9 +12,32 @@ body {
     padding: 20px;
 }
 
+.background-image {
+    background-image: url('../IMG/cobblemon-wallpaper.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: fixed; /* Fixe l'élément à la fenêtre, de sorte qu'il reste en arrière-plan */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place l'élément en arrière-plan */
+}
+
+.background-image::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.363); /* Couleur sombre semi-transparente */
+    z-index: 0; /* Assurez-vous que le pseudo-élément est en dessous de l'image de fond */
+}
+
 .all-mods {
-    background-color: rgb(41, 36, 36, 0.541);
+    background-color: rgba(41, 36, 36, 0.815);
     padding: 20px;
+    padding-top: 0;
     margin-left: auto;
     margin-right: auto;
     width: auto;
@@ -170,6 +193,16 @@ body {
     width: 250px;
     left: 100px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0; /* Initialisez l'opacité à 0 pour qu'il soit initialement caché */
+    transform: translateY(20px); /* Initialisez la transformation pour qu'il soit initialement décalé vers le bas */
+    pointer-events: none; /* Empêche les interactions avec le formulaire caché */
+}
+
+#add-mod-form.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
 }
 
 .add-mod-title

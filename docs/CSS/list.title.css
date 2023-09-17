@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap');
+
+.sweet-title {
+  font-family: 'Raleway', sans-serif;
+	letter-spacing:0.1em;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  text-shadow: 
+					  2px 2px rgb(17, 109, 90),
+						4px 4px #000000;
+}
+
+.underline-sweet-title {
+  position: relative;
+}
+
+.underline-sweet-title::before {
+  /* Highlight color */
+  background-color: #46b96c;
+
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 20px;
+  left: 0;
+  z-index: -1;
+  transform: rotate(-2deg);
+}

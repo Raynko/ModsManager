@@ -1,12 +1,12 @@
 function ShowHideForm() {
-    var x = document.getElementById("add-mod-form");
-    var btn = document.getElementById("show-hide-form");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-      btn.textContent = "−";
-    } else {
-      x.style.display = "none";
+  console.log("Fonction ShowHideForm appelée.");
+  var x = document.getElementById("add-mod-form");
+  var btn = document.getElementById("show-hide-form");
+  if (x.classList.contains("show")) {
+      x.classList.remove("show");
       btn.textContent = "+";
-    }
+  } else {
+      x.classList.add("show");
+      btn.textContent = "−";
   }
-  
+}

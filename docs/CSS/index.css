@@ -35,7 +35,8 @@ body {
 }
 
 .all-modpacks {
-    background-color: rgba(41, 36, 36, 0.815);
+    backdrop-filter: blur(5px);
+    background-color: rgba(41, 36, 36, 0.5);
     padding: 20px;
     padding-right: 10px;
     padding-bottom: 10px;
@@ -66,11 +67,11 @@ body {
     transition: all 0.2s ease;
 }
 
-.new-modpack:hover {
+.new-modpack-btn:hover {
     background-color: rgb(83, 73, 73);
 }
 
-.new-modpack:active {
+.new-modpack-btn:active {
     background-color: rgb(94, 82, 82);
 }
 
@@ -136,6 +137,7 @@ body {
 }
 
 .form-new-modpack-background {
+    backdrop-filter: blur(3px);
     background-color: rgba(0, 0, 0, 0.6);
     position: fixed; /* Fixe l'élément à la fenêtre, de sorte qu'il reste en arrière-plan */
     top: 0;
@@ -145,11 +147,91 @@ body {
 }
 
 .form-new-modpack-backcolor {
-    background-color: #17836d;
-    height: 170px;
+    background: rgb(27, 32, 44);
     width: 300px;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    border-radius: 3px;
+    padding: 10px;
+    padding-bottom: 30px;
+}
+
+.form-new-modpack-title
+{
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-new-modpack-line
+{
+    margin-bottom: 15px;
+    border: 1px dashed;
+    color: white;
+}
+
+.new-modpack-label {
+    color: white;
+    font-size: 12px;
+}
+
+.field{
+    padding: 8px;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	width: 100%;
+	color: #ffffff;
+	font-size: 13px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.field:focus {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+::placeholder {
+    color: rgba(255, 255, 255, 0.466);
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+.select-dropdown {
+    padding: 8px;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	width: 100%;
+	color: white;
+	font-size: 13px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+option {
+    font-size: 13px;
+    background: rgb(66, 72, 82);
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+}
+
+.new-modpack-footer {
+    background-color: #ffffff28;
+    color: white;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
 }

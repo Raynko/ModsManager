@@ -40,6 +40,31 @@
 
         <div class="form-new-modpack-background">
             <div class="form-new-modpack-backcolor">
+                <div class="form-new-modpack-title">Ajouter un nouveau Modpack</div>
+                <hr class="form-new-modpack-line">
+
+                <form id="new-modpack-form">
+                    <label class="new-modpack-label">Nom :</label>
+                    <input type="text" class="field" id="name-field" placeholder="Nom du modpack" autocomplete="off" required>
+
+                    <label class="new-modpack-label">Auteur :</label>
+                    <select class="select-dropdown" pl>
+                        <option selected style="display: none">Choisir l'auteur :</option>
+                        <option>Raynko</option>
+                        <option>Voronin99</option>
+                    </select>
+
+                    <label class="new-modpack-label">Version :</label>
+                    <select class="select-dropdown" pl>
+                        <option selected style="display: none">Choisir la version :</option>
+                        <option>1.19.2</option>
+                        <option>1.12.2</option>
+                    </select>
+                
+                    <div class="new-modpack-footer">
+
+                    </div>
+                </form>
 
             </div>
         </div>

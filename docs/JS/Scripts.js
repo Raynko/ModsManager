@@ -1,12 +1,21 @@
 function ShowHideForm() {
-  console.log("Fonction ShowHideForm appelée.");
-  var x = document.getElementById("add-mod-form");
+  var form = document.getElementById("add-mod-form");
   var btn = document.getElementById("show-hide-form");
-  if (x.classList.contains("show")) {
-      x.classList.remove("show");
-      btn.textContent = "+";
+  if (form.classList.contains("show")) {
+    form.classList.remove("show");
+    btn.textContent = "+";
   } else {
-      x.classList.add("show");
-      btn.textContent = "−";
+    form.classList.add("show");
+    btn.textContent = "−";
   }
+}
+
+function ShowNewModpackForm() {
+  var form = document.getElementById("form-new-modpack-background");
+  form.style.display = "block";
+}
+
+function HideNewModpackForm() {
+  var form = document.getElementById("form-new-modpack-background");
+  form.style.display = "none";
 }

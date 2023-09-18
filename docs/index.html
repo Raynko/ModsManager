@@ -10,8 +10,9 @@
 
         <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
+        
         <link rel="stylesheet" type="text/css" href="CSS/index.css">
+        <link rel="stylesheet" type="text/css" href="CSS/form.checkbox.css">
 
         <link rel="shortcut icon" href="">
         <title>Mods Manager</title>
@@ -22,7 +23,7 @@
 
         <div class="all-modpacks">  
 
-            <button class="new-modpack-btn">
+            <button class="new-modpack-btn" onclick="ShowNewModpackForm()">
                 <div class="icon-container">
                     <p class="add-icon">+</p>
                 </div>
@@ -33,17 +34,17 @@
                 <div class="modpack-name">Mods en 1.19.2</div>
                 <div class="modpack-version">1.19.2</div>
                 <div class="modpack-author">Par Raynko</div>
-                <a class="modpack-access-btn"  href="">Voir</a>
+                <a class="modpack-access-btn"  href="modpack.html">Voir</a>
             </div>
 
         </div>  
 
-        <div class="form-new-modpack-background">
+        <div id="form-new-modpack-background" style="display: none;">
             <div class="form-new-modpack-backcolor">
                 <div class="form-new-modpack-title">Ajouter un nouveau Modpack</div>
                 <hr class="form-new-modpack-line">
 
-                <form id="new-modpack-form">
+                <form class="new-modpack-form">
                     <label class="new-modpack-label">Nom :</label>
                     <input type="text" class="field" id="name-field" placeholder="Nom du modpack" autocomplete="off" required>
 
@@ -57,17 +58,49 @@
                     <label class="new-modpack-label">Version :</label>
                     <select class="select-dropdown" pl>
                         <option selected style="display: none">Choisir la version :</option>
+                        <option>1.20</option>
                         <option>1.19.2</option>
                         <option>1.12.2</option>
                     </select>
-                
-                    <div class="new-modpack-footer">
 
+                    <label class="new-modpack-label">Sections :</label>
+                    <div class="new-modpack-sections">
+
+                        <input type="checkbox">
+                        <label class="new-modpack-checkbox-label">Catégorie</label><br>
+
+                        <input type="checkbox">
+                        <label class="new-modpack-checkbox-label">Image</label><br>
+
+                        <input type="checkbox">
+                        <label class="new-modpack-checkbox-label">Nom du mod</label><br>
+
+                        <input type="checkbox">
+                        <label class="new-modpack-checkbox-label">Type</label><br>
+
+                        <input type="checkbox">
+                        <label class="new-modpack-checkbox-label">Description</label><br>
+
+                        <input type="checkbox">
+                        <label class="new-modpack-checkbox-label">Version installé</label><br>
+
+                        <input type="checkbox">
+                        <label class="new-modpack-checkbox-label">Lien du mod</label><br>
+
+                        <input type="checkbox">
+                        <label class="new-modpack-checkbox-label">Version du mod</label>
+
+                    </div>
+
+                    <div class="new-modpack-footer">
+                        <button class="return-btn" onclick="HideNewModpackForm()">Retour</button>
+                        <input type="submit" value="Terminer" class="submit-btn" onclick="HideNewModpackForm()">
                     </div>
                 </form>
 
             </div>
         </div>
 
+        <script src="JS/Scripts.js"></script>
     </body>
 </html>

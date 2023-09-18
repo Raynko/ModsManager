@@ -192,8 +192,8 @@ body {
 }
 
 #add-mod-form
-{
-    background-color: #09463a;
+{    backdrop-filter: blur(5px);
+    background-color: #09463ae7;
     padding: 10px;
     position: fixed;
     bottom: 20px;

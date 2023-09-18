@@ -62,7 +62,8 @@ body {
 }
 
 .new-modpack-btn {
-    background-color: rgb(73, 64, 64);
+    backdrop-filter: blur(5px);
+    background-color: rgba(73, 64, 64, 0.4);
     color: white;
     width: 100px;
     height: 100px;
@@ -80,11 +81,13 @@ body {
 }
 
 .new-modpack-btn:hover {
-    background-color: rgb(83, 73, 73);
+    backdrop-filter: blur(5px);
+    background-color: rgba(95, 84, 84, 0.4);
 }
 
 .new-modpack-btn:active {
-    background-color: rgb(94, 82, 82);
+    backdrop-filter: blur(5px);
+    background-color: rgba(122, 108, 108, 0.4);
 }
 
 .icon-container {
@@ -101,7 +104,8 @@ body {
 }
 
 .modpack {
-    background-color: rgb(73, 64, 64);
+    backdrop-filter: blur(5px);
+    background-color: rgba(128, 113, 113, 0.4);
     width: 100px;
     height: 100px;
     border-radius: 3px;

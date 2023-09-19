@@ -49,13 +49,13 @@
         
         <button type="button" onclick="ShowHideForm()" id="show-hide-form">+</button>
 
+        <div class="add-mod-alert" style="display: none">nouveau mod ajouté !</div>
+
         <!-- Formulaire pour ajouter un nouvel élément -->
         <div id="add-mod-form">
             <div class="add-mod-title">Ajouter un Mod</div>
             <hr class="add-mod-line">
             <form id="new-mod-form">
-                <div class="alert" style="display: none;">nouveau mod ajouté</div>
-
                 <input type="text" class="field" id="cat-field" placeholder="Catégorie" autocomplete="off" required>
                 <input type="text" class="field" id="image-field" placeholder="Image URL" autocomplete="off" required>
                 <input type="text" class="field" id="name-field" placeholder="Nom du mod" autocomplete="off" required>
@@ -77,7 +77,8 @@
             <div class="cell"><a target="_blank" href="" class="element-link">CurseForge</a></div>
         </div>  
 
-        <script src="JS/Database.js"></script>
+        <script src="JS/Database-connect.js"></script>
+        <script src="JS/Database-mod.js"></script>
         <script src="JS/Scripts.js"></script>
     </body>
 </html>

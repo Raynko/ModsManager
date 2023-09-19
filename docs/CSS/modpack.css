@@ -13,7 +13,7 @@ body {
 }
 
 .background-image {
-    background-image: url('../IMG/create-wallpaper.0.jpg');
+    background-image: url('../IMG/cobblemon-wallpaper.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -254,3 +254,14 @@ input:focus::placeholder {
     color: transparent;
 }
 
+.add-mod-alert {
+    background: #12866fa6;
+    color: rgba(255, 255, 255, 0.719);
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 30px;
+    padding: 10px;
+    border-radius: 3px;
+    font-size: 20px;
+}

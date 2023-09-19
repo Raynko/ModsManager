@@ -57,7 +57,16 @@ function displayModpacks() {
     // Référence aux nœuds "Modpacks"
     const modpacksRef = database.ref('Modpacks');
 
+    // Récupérez le bouton "Nouveau modpack" et stockez-le dans une variable
+    const newModpackButton = document.querySelector('.new-modpack-btn');
+
     modpacksRef.on('value', (snapshot) => {
+        // Réinitialisez le contenu de modpacksContainer
+        modpacksContainer.innerHTML = '';
+
+        // Réinsérez le bouton "Nouveau modpack" dans modpacksContainer après avoir ajouté les modpacks
+        modpacksContainer.appendChild(newModpackButton);
+
         snapshot.forEach((childSnapshot) => {
             const modpackKey = childSnapshot.key;
             const modpackData = childSnapshot.child('Settings').val();

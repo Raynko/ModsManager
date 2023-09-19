@@ -52,12 +52,12 @@
                     <input type="text" class="field" id="name-field" placeholder="Nom du modpack" autocomplete="off" required>
 
                     <label class="new-modpack-label">Auteur :</label>
-                    <select class="select-dropdown" pl>
+                    <select class="select-dropdown" id="author-field" required> 
                         <option selected style="display: none">Choisir l'auteur :</option>
                     </select>
 
                     <label class="new-modpack-label">Version :</label>
-                    <select class="select-dropdown" pl>
+                    <select class="select-dropdown" id="version-field" required>
                         <option selected style="display: none">Choisir la version :</option>
                     </select>
 
@@ -99,6 +99,9 @@
             </div>
         </div>
 
+        <script src="JS/Database-connect.js"></script>
+        <script src="JS/Database-modpack.js"></script>
         <script src="JS/Scripts.js"></script>
+
     </body>
 </html>

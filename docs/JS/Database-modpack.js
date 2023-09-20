@@ -151,7 +151,7 @@ function displayModpacks() {
             const modpackAccessBtn = document.createElement('a');
             modpackAccessBtn.classList.add('modpack-access-btn');
             modpackAccessBtn.textContent = `Voir`;
-            modpackAccessBtn.href = `${modpackName}`; // Ajoutez votre logique pour le lien
+            modpackAccessBtn.href = `modpack.html?${modpackName}`; // Ajoutez votre logique pour le lien
 
             modpackElement.appendChild(modpackNameElement);
             modpackElement.appendChild(modpackVersionElement);

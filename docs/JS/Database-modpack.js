@@ -142,7 +142,11 @@ function displayModpacks() {
 
             const modpackAuthorElement = document.createElement('div');
             modpackAuthorElement.classList.add('modpack-author');
-            modpackAuthorElement.textContent = `Par ${modpackAuthor}`;
+            if (modpackAuthor !== "") {
+                modpackAuthorElement.textContent = `Par ${modpackAuthor}`;
+            } else {
+                modpackAuthorElement.textContent = modpackAuthor;
+            }
 
             const modpackAccessBtn = document.createElement('a');
             modpackAccessBtn.classList.add('modpack-access-btn');

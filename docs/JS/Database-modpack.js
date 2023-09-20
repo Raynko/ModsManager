@@ -37,45 +37,69 @@ form.addEventListener('submit', (e) => {
     const author = authorDropdown.value;
     const version = versionDropdown.value;
 
+    // Vérifiez si l'utilisateur a sélectionné une option autre que la valeur par défaut
+    if (author === 'Choisir l\'auteur :') {
+        // Affichez un message d'erreur
+        document.getElementById('alert-author-not-select').style.display = "block";
+    } else {
+        document.getElementById('alert-author-not-select').style.display = "none";
+    }
+
+    if (version === 'Choisir la version :') {
+        // Affichez un message d'erreur
+        document.getElementById('alert-version-not-select').style.display = "block";
+    } else {
+        document.getElementById('alert-version-not-select').style.display = "none";
+    }
+
     // Vérifiez si le nom du modpack est unique
     const modpacksRef = database.ref('Modpacks');
     modpacksRef.child(name).once('value', (snapshot) => {
+
         if (snapshot.exists()) {
-            alert("Ce nom de modpack existe déjà. Veuillez choisir un nom unique.");
+            // Si le nom du modpack n'est pas unique
+            document.getElementById('alert-existing-modpack').style.display = "block";
         } else {
-            // Le nom est unique, ajoutez les données à la base de données Firebase sous "Modpacks" avec les cases à cocher
-            // Obtenez les valeurs des cases à cocher
-            const categoryChecked = document.getElementById('chk-category').checked;
-            const imageChecked = document.getElementById('chk-image').checked;
-            const nameChecked = document.getElementById('chk-name').checked;
-            const typeChecked = document.getElementById('chk-type').checked;
-            const descriptionChecked = document.getElementById('chk-description').checked;
-            const installedVersionChecked = document.getElementById('chk-installed-version').checked;
-            const modVersionChecked = document.getElementById('chk-mod-version').checked;
-            const linkChecked = document.getElementById('chk-link').checked;
-
-            // Ajoutez les données à la base de données Firebase sous "Modpacks" avec les cases à cocher
-            const newModpackRef = database.ref(`Modpacks/${name}/Settings`);
-            newModpackRef.set({
-                Author: author,
-                Version: version,
-                Section: {
-                    category: categoryChecked,
-                    image: imageChecked,
-                    name: nameChecked,
-                    type: typeChecked,
-                    description: descriptionChecked,
-                    'version-installed': installedVersionChecked,
-                    'mod-version': modVersionChecked,
-                    link: linkChecked
-                }
-            });
-
-            // Réinitialisez le formulaire après l'ajout
-            form.reset();
-
-            HideNewModpackForm();
+            document.getElementById('alert-existing-modpack').style.display = "none";
         }
+
+        if (author === 'Choisir l\'auteur :' || version === 'Choisir la version :' || snapshot.exists()) {
+            return; // Arrêtez la soumission du formulaire
+        }
+
+        // Le nom est unique, ajoutez les données à la base de données Firebase sous "Modpacks" avec les cases à cocher
+        // Obtenez les valeurs des cases à cocher
+        const categoryChecked = document.getElementById('chk-category').checked;
+        const imageChecked = document.getElementById('chk-image').checked;
+        const nameChecked = document.getElementById('chk-name').checked;
+        const typeChecked = document.getElementById('chk-type').checked;
+        const descriptionChecked = document.getElementById('chk-description').checked;
+        const installedVersionChecked = document.getElementById('chk-installed-version').checked;
+        const modVersionChecked = document.getElementById('chk-mod-version').checked;
+        const linkChecked = document.getElementById('chk-link').checked;
+
+        // Ajoutez les données à la base de données Firebase sous "Modpacks" avec les cases à cocher
+        const newModpackRef = database.ref(`Modpacks/${name}/Settings`);
+        newModpackRef.set({
+            Author: author,
+            Version: version,
+            Section: {
+                category: categoryChecked,
+                image: imageChecked,
+                name: nameChecked,
+                type: typeChecked,
+                description: descriptionChecked,
+                'version-installed': installedVersionChecked,
+                'mod-version': modVersionChecked,
+                link: linkChecked
+            }
+        });
+
+        // Réinitialisez le formulaire après l'ajout
+        form.reset();
+
+        HideNewModpackForm();
+        
     });
 });
 

@@ -42,16 +42,25 @@
                 <form class="new-modpack-form">
                     <label class="new-modpack-label">Nom :</label>
                     <input type="text" class="field" id="name-field" placeholder="Nom du modpack" autocomplete="off" required>
+                    <div id="alert-existing-modpack" style="display: none;">
+                        Ce nom de modpack existe déjà. Choisis un nom unique. (Bouffon)
+                    </div>
 
                     <label class="new-modpack-label">Auteur :</label>
-                    <select class="select-dropdown" id="author-field" required> 
+                    <select class="select-dropdown" id="author-field"> 
                         <option selected style="display: none">Choisir l'auteur :</option>
                     </select>
-
+                    <div id="alert-author-not-select" style="display: none;">
+                        Choisis l'auteur bouffon.
+                    </div>
+                    
                     <label class="new-modpack-label">Version :</label>
-                    <select class="select-dropdown" id="version-field" required>
+                    <select class="select-dropdown" id="version-field">
                         <option selected style="display: none">Choisir la version :</option>
                     </select>
+                    <div id="alert-version-not-select" style="display: none;">
+                        Choisis la version bouffon.
+                    </div>
 
                     <label class="new-modpack-label">Sections :</label>
                     <div class="new-modpack-sections">

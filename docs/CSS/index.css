@@ -318,3 +318,28 @@ option {
 .submit-btn:active{
     background: #1f9c57;
 }
+
+#alert-existing-modpack {
+    color: rgb(255, 0, 0);
+    position: absolute;
+    margin-bottom: 30px;
+    font-size: 9px;
+    top: 100px;
+}
+
+#alert-author-not-select {
+    color: rgb(255, 0, 0);
+    position: absolute;
+    margin-bottom: 30px;
+    font-size: 9px;
+    top: 162px;
+}
+
+#alert-version-not-select {
+    color: rgb(255, 0, 0);
+    position: absolute;
+    margin-bottom: 30px;
+    font-size: 9px;
+    top: 225px;
+}
+

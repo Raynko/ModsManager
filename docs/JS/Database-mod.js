@@ -85,6 +85,9 @@ categoriesRef.on('value', (snapshot) => {
             if (categoryHasMods) {
                 elementListContainer.appendChild(categoryElement);
             }
+            
+            SynchScroll();
         });
     });
 });
+

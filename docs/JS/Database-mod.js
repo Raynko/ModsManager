@@ -10,8 +10,26 @@ const elementListContainer = document.querySelector('.all-mods');
 // Récupérez une référence aux catégories depuis Firebase
 const categoriesRef = firebase.database().ref('Mods-Settings/Catégories');
 
-categoriesRef.once('value', (snapshot) => {
+// Cette fonction supprime tous les enfants d'un élément
+function removeAllChildren(element) {
+    while (element.firstChild) {
+        element.removeChild(element.firstChild);
+    }
+}
+
+// Fonction pour supprimer une catégorie si elle est vide
+function removeEmptyCategory(categoryElement) {
+    const modsContainer = categoryElement.querySelector('.list-content');
+    if (!modsContainer.hasChildNodes()) {
+        categoryElement.remove(); // Supprimez la catégorie de l'affichage
+    }
+}
+
+categoriesRef.on('value', (snapshot) => {
     const categories = snapshot.val();
+
+    // Videz le conteneur global pour les mods
+    removeAllChildren(elementListContainer);
 
     // Bouclez sur chaque catégorie
     categories.forEach((category) => {
@@ -28,8 +46,11 @@ categoriesRef.once('value', (snapshot) => {
         // Récupérez une référence aux mods du modpack actuel dans cette catégorie
         const modsInCategoryRef = modpackRef.child('Mods');
 
-        modsInCategoryRef.once('value', (modsSnapshot) => {
+        modsInCategoryRef.on('value', (modsSnapshot) => {
             let categoryHasMods = false; // Indicateur pour vérifier s'il y a des mods dans la catégorie
+
+            // Videz le conteneur des mods de cette catégorie
+            removeAllChildren(modsContainer);
 
             modsSnapshot.forEach((modSnapshot) => {
                 // Obtenir les données du mod à partir de Firebase
@@ -56,6 +77,9 @@ categoriesRef.once('value', (snapshot) => {
                     categoryHasMods = true;
                 }
             });
+
+            // Appelez la fonction pour supprimer la catégorie si elle est vide
+            removeEmptyCategory(categoryElement);
 
             // Ajoutez l'élément de catégorie au conteneur global des mods seulement s'il y a des mods dans la catégorie
             if (categoryHasMods) {

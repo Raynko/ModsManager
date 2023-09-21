@@ -41,6 +41,20 @@ function SynchScroll() {
   });
 }
 
+// Récupérez l'élément .cat-header
+const catHeader = document.querySelector('.cat-header');
 
+// Ajoutez un gestionnaire d'événement de défilement à la fenêtre
+window.addEventListener('scroll', () => {
+    // Calculez la distance entre le haut de l'élément et le haut de la fenêtre
+    const distanceFromTop = catHeader.getBoundingClientRect().top;
 
-
+    // Si la distance est supérieure à 0, déplacez progressivement l'élément vers le haut
+    if (distanceFromTop > 0) {
+        const newPosition = Math.max(0, 75 - window.scrollY);
+        catHeader.style.top = newPosition + 'px';
+    } else {
+        // Une fois que l'élément atteint le haut de la fenêtre, il reste fixe
+        catHeader.style.top = '0';
+    }
+});

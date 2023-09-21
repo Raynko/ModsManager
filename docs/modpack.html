@@ -48,11 +48,16 @@
         <div class="add-mod-title">Ajouter un Mod</div>
         <hr class="add-mod-line">
         <form id="new-mod-form">
-            <input type="text" class="field" id="cat-field" placeholder="Catégorie" autocomplete="off">
+            <select class="select-dropdown" id="category-field">
+                <option selected style="display: none">Choisir la catégorie :</option>
+            </select>
+            <div id="alert-category-not-select" style="display: none;">
+                Choisis la catégorie bouffon.
+            </div>
             <input type="text" class="field" id="image-field" placeholder="Image URL" autocomplete="off">
             <input type="text" class="field" id="name-field" placeholder="Nom du mod" autocomplete="off">
             <input type="text" class="field" id="type-field" placeholder="Type" autocomplete="off">
-            <input type="text" class="field" id="desc-field" placeholder="Description" autocomplete="off">
+            <input type="text" class="field" id="description-field" placeholder="Description" autocomplete="off">
             <input type="text" class="field" id="installed-version-field" placeholder="Version installée" autocomplete="off">
             <input type="text" class="field" id="version-field" placeholder="Version de minecraft" autocomplete="off">
             <input type="text" class="field" id="link-field" placeholder="Lien" autocomplete="off">

@@ -10,6 +10,19 @@ const elementListContainer = document.querySelector('.all-mods');
 // Récupérez une référence aux catégories depuis Firebase
 const categoriesRef = firebase.database().ref('Mods-Settings/Catégories');
 
+// Récupére une référence au select de catégories dans le formulaire
+const categoryDropdown = document.getElementById('category-field');
+
+// Chargez les options depuis Firebase
+categoriesRef.on('value', (snapshot) => {
+    snapshot.forEach((childSnapshot) => {
+        const category = childSnapshot.val();
+        const option = document.createElement('option');
+        option.textContent = category;
+        categoryDropdown.appendChild(option);
+    });
+});
+
 // Cette fonction supprime tous les enfants d'un élément
 function removeAllChildren(element) {
     while (element.firstChild) {

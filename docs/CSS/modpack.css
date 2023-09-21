@@ -47,9 +47,6 @@ body {
     top: 0;
 }
 
-
-
-
 .scroll{
     border-radius: 3px;
     overflow-x: auto;
@@ -272,6 +269,35 @@ body {
 .field:focus {
     outline: 2px dashed #ad2b89;
     outline-offset: 0.2em;
+}
+
+.select-dropdown {
+
+    padding: 8px;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	width: 100%;
+	color: white;
+	font-size: 13px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+option {
+    font-size: 13px;
+    background: rgb(52, 107, 93);
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+}
+
+#alert-category-not-select {
+    color: rgb(255, 0, 0);
+    position: absolute;
+    margin-bottom: 30px;
+    font-size: 9px;
+    top: 48px;
 }
 
 ::placeholder {

@@ -180,3 +180,66 @@ addCategoryForm.addEventListener('submit', async (e) => {
         }
     }
 });
+
+// Sélectionnez le formulaire d'ajout de mod
+const addModForm = document.getElementById('new-mod-form');
+
+// Écoutez l'événement de soumission du formulaire
+addModForm.addEventListener('submit', async (e) => {
+    e.preventDefault(); // Empêchez la soumission par défaut du formulaire
+
+    // Récupérez les valeurs des champs du formulaire
+    const categorySelect = document.getElementById('category-field');
+    const imageInput = document.getElementById('image-field');
+    const nameInput = document.getElementById('name-field');
+    const typeInput = document.getElementById('type-field');
+    const descriptionInput = document.getElementById('description-field');
+    const installedVersionInput = document.getElementById('installed-version-field');
+    const versionSelect = document.getElementById('version-field');
+    const linkInput = document.getElementById('link-field');
+
+    // Vérifiez si tous les champs requis sont remplis
+    if (
+        categorySelect.value !== '' &&
+        nameInput.value.trim() !== ''
+    ) {
+        try {
+            // Récupérez la référence aux mods du modpack actuel dans la catégorie sélectionnée
+            const modsInCategoryRef = modpackRef.child('Mods');
+
+            // Utilisez le nom du mod saisi par l'utilisateur comme clé
+            const newModKey = nameInput.value.trim();
+
+            // Créez un objet représentant le nouveau mod
+            const newMod = {
+                category: categorySelect.value,
+                description: descriptionInput.value.trim(),
+                image: imageInput.value.trim(),
+                link: linkInput.value.trim(),
+                'mod-version': versionSelect.value,
+                type: typeInput.value.trim(),
+                'version-installed': installedVersionInput.value.trim(),
+            };
+
+            // Ajoutez le nouveau mod à la référence des mods du modpack
+            await modsInCategoryRef.child(newModKey).set(newMod);
+
+            // Effacez les champs du formulaire après l'ajout
+            categorySelect.value = '';
+            imageInput.value = '';
+            nameInput.value = '';
+            typeInput.value = '';
+            descriptionInput.value = '';
+            installedVersionInput.value = '';
+            versionSelect.value = '';
+            linkInput.value = '';
+
+            // Facultatif : affichez un message de succès ou effectuez d'autres actions après l'ajout
+        } catch (error) {
+            console.error('Erreur lors de l\'ajout du mod :', error);
+        }
+    } else {
+        // Affichez un message d'erreur si des champs sont manquants
+        console.error('Veuillez remplir tous les champs requis.');
+    }
+});

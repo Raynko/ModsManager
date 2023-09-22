@@ -60,12 +60,17 @@
             <div id="alert-category-not-select" style="display: none;">
                 Choisis la catégorie bouffon.
             </div>
+            
             <input type="text" class="field" id="image-field" placeholder="Image URL" autocomplete="off">
             <input type="text" class="field" id="name-field" placeholder="Nom du mod" autocomplete="off">
             <input type="text" class="field" id="type-field" placeholder="Type" autocomplete="off">
             <input type="text" class="field" id="description-field" placeholder="Description" autocomplete="off">
             <input type="text" class="field" id="installed-version-field" placeholder="Version installée" autocomplete="off">
-            <input type="text" class="field" id="version-field" placeholder="Version de minecraft" autocomplete="off">
+
+            <select class="select-dropdown" id="version-field">
+                <option selected style="display: none">Version de minecraft :</option>
+            </select>
+
             <input type="text" class="field" id="link-field" placeholder="Lien" autocomplete="off">
             <button type="submit" class="button-85" id="add-new-mod-button">+</button>
         </form>

@@ -11,6 +11,12 @@ const versionDropdown = document.getElementById('version-field');
 
 // Chargez les options depuis Firebase
 authorRef.on('value', (snapshot) => {
+
+    // Supprimez toutes les options actuelles du select, sauf la première option ajoutée manuellement
+    while (authorDropdown.childNodes.length > 2) {
+        authorDropdown.removeChild(authorDropdown.lastChild);
+    }
+
     snapshot.forEach((childSnapshot) => {
         const author = childSnapshot.val();
         const option = document.createElement('option');
@@ -20,6 +26,12 @@ authorRef.on('value', (snapshot) => {
 });
 
 versionRef.on('value', (snapshot) => {
+
+    // Supprimez toutes les options actuelles du select, sauf la première option ajoutée manuellement
+    while (versionDropdown.childNodes.length > 2) {
+        versionDropdown.removeChild(versionDropdown.lastChild);
+    }
+
     snapshot.forEach((childSnapshot) => {
         const version = childSnapshot.val();
         const option = document.createElement('option');

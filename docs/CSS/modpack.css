@@ -34,6 +34,20 @@ body {
     z-index: 0; /* Assurez-vous que le pseudo-élément est en dessous de l'image de fond */
 }
 
+.modpack-title-container {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 50px;
+}
+
+.modpack-title {
+    color: white;
+    font-size: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .cat-header {
     padding: 20px;
     padding-top: 0;
@@ -41,7 +55,7 @@ body {
     margin-right: auto;
     width: auto;
     max-width: 700px;
-    margin-top: 70px;
+    margin-top: 20px;
     z-index: 100;
     position: sticky;
     top: 0;

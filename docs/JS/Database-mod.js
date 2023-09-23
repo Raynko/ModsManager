@@ -1,6 +1,8 @@
 const urlParams = new URLSearchParams(window.location.search);
 const modpackName = Array.from(urlParams.keys())[0];
 
+document.querySelector('.modpack-title').textContent = modpackName;
+
 // Récupérez une référence à la base de données Firebase avec le nom du modpack
 const modpackRef = firebase.database().ref('Modpacks/' + modpackName);
 
@@ -12,8 +14,6 @@ const categoriesRef = firebase.database().ref('Mods-Settings/Catégories');
 
 // Récupére une référence au select de catégories dans le formulaire
 const categoryDropdown = document.getElementById('category-field');
-
-
 
 // Chargez les options de category depuis Firebase
 categoriesRef.on('value', (snapshot) => {
@@ -128,7 +128,7 @@ categoriesRef.on('value', (snapshot) => {
             if (categoryHasMods) {
                 elementListContainer.appendChild(categoryElement);
             }
-            
+
             SynchScroll();
         });
     });
@@ -199,8 +199,16 @@ addModForm.addEventListener('submit', async (e) => {
     const linkInput = document.getElementById('link-field');
 
     // Vérifiez si tous les champs requis sont remplis
+
+    if (categoryDropdown.value === 'Choisir la catégorie :') {
+        // Affichez un message d'erreur
+        document.getElementById('alert-category-not-select').style.display = "block";
+        return;
+    } else {
+        document.getElementById('alert-category-not-select').style.display = "none";
+    }
+
     if (
-        categorySelect.value !== '' &&
         nameInput.value.trim() !== ''
     ) {
         try {
@@ -210,13 +218,23 @@ addModForm.addEventListener('submit', async (e) => {
             // Utilisez le nom du mod saisi par l'utilisateur comme clé
             const newModKey = nameInput.value.trim();
 
+            let modVersion;
+
+            //Verifie si le champ version est pas séléctionné
+            if (versionDropdown.value === 'Version de minecraft :')
+            {
+                modVersion = "";
+            } else {
+                modVersion = versionSelect.value;
+            }
+
             // Créez un objet représentant le nouveau mod
             const newMod = {
                 category: categorySelect.value,
                 description: descriptionInput.value.trim(),
                 image: imageInput.value.trim(),
                 link: linkInput.value.trim(),
-                'mod-version': versionSelect.value,
+                'mod-version': modVersion,
                 type: typeInput.value.trim(),
                 'version-installed': installedVersionInput.value.trim(),
             };
@@ -234,7 +252,16 @@ addModForm.addEventListener('submit', async (e) => {
             versionSelect.value = '';
             linkInput.value = '';
 
-            // Facultatif : affichez un message de succès ou effectuez d'autres actions après l'ajout
+            // Afficher l'alerte d'ajout de mod
+            document.querySelector('.add-mod-alert').style.display = "block";
+
+            // Cacher l'alerte après 3 secondes
+            setTimeout(() => {
+                document.querySelector('.add-mod-alert').style.display = "none";
+            }, 3000);
+                        
+            categoryDropdown.selectedIndex = 0;
+            versionDropdown.selectedIndex = 0;
         } catch (error) {
             console.error('Erreur lors de l\'ajout du mod :', error);
         }

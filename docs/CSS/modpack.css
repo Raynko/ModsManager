@@ -417,3 +417,16 @@ input:focus::placeholder {
     color: white;
 }
 
+.modpack-board {
+    backdrop-filter: blur(25px);
+    background: rgba(0, 0, 0, 0.719);
+    height: 500px;
+    width: 300px;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 520px;
+    top: 201px;
+    border-radius: 3px;
+}
+

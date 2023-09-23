@@ -30,9 +30,9 @@
             <div class="cat-header-content">
                 <div class="cell cat-header-title">Image</div>
                 <div class="cell cat-header-title">Name</div>
-                <div class="cell cat-header-title">Type</div>
-                <div class="cell cat-header-title">Description</div>
-                <div class="cell cat-header-title">Version installé</div>
+                <div class="cell cat-header-title" style="display: none;">Type</div>
+                <div class="cell cat-header-title" style="display: none;">Description</div>
+                <div class="cell cat-header-title" style="display: none;">Version installé</div>
                 <div class="cell cat-header-title" style="display: none;">Version de minecraft</div>
                 <div class="cell cat-header-title">Lien</div>
             </div>
@@ -84,9 +84,10 @@
     <div class="element-list cat-content element" id="element-template" style="display: none;">
         <div class="cell"><img class="element-image" src="" onerror="this.src='IMG/blankPic.png'"></div>
         <div class="cell element-name"></div>
-        <div class="cell element-type"></div>
-        <div class="cell element-desc"></div>
-        <div class="cell element-version"></div>
+        <div class="cell element-type" style="display: none;"></div>
+        <div class="cell element-desc" style="display: none;"></div>
+        <div class="cell element-installed-version-version" style="display: none;"></div>
+        <div class="cell element-version" style="display: none;"></div>
         <div class="cell"><a target="_blank" href="" class="element-link">CurseForge</a></div>
     </div>
 

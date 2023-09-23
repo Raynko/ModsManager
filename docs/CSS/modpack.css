@@ -118,7 +118,7 @@ body {
 .cell {
     text-align: center;
     flex-grow: 1;
-    min-width: 100px;
+    min-width: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -140,7 +140,6 @@ body {
     
     background: rgba(255, 255, 255, 0.13);
     min-width: 100%/45px;
-    width: fit-content;
     font-size: 10px;
     text-align: center;
     transition: .2s;

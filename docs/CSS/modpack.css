@@ -13,7 +13,7 @@ body {
 }
 
 .background-image {
-    background-image: url('../IMG/cobblemon-wallpaper.jpg');
+    background-image: url('../IMG/WALL/cobblemon-wallpaper.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -117,7 +117,7 @@ body {
 
 .cell {
     text-align: center;
-    flex-grow: 1;
+    flex: 1;
     min-width: 80px;
     display: flex;
     justify-content: center;
@@ -139,7 +139,8 @@ body {
 .element {
     
     background: rgba(255, 255, 255, 0.13);
-    min-width: 100%/45px;
+    min-width: 100%;
+    width: fit-content;
     font-size: 10px;
     text-align: center;
     transition: .2s;
@@ -383,3 +384,32 @@ input:focus::placeholder {
     box-shadow: 0 1px rgba(0, 0, 0, 0.329);
     transform: translateY(1px);
 }
+
+.all-alter-btn {
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.alter-btn {
+    height: 25px;
+    width: 25px;
+    border: none;
+    background: rgba(255, 255, 255, 0.315);
+    color: white;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 10px;
+    transition: 0.2s;
+}
+
+.alter-btn:hover {
+    background: rgba(255, 255, 255, 0.555);
+}
+
+.alter-btn:active {
+    background: rgba(255, 255, 255, 0.815);
+}
+
+
+

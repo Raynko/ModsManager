@@ -411,5 +411,9 @@ input:focus::placeholder {
     background: rgba(255, 255, 255, 0.815);
 }
 
-
+.alter-icon {
+    height: 15px;
+    width: 15px;
+    color: white;
+}
 

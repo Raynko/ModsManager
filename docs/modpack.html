@@ -46,7 +46,41 @@
 
     <button type="button" onclick="ShowHideForm()" id="show-hide-form">+</button>
 
-    <div class="modpack-board"></div>
+    <div class="modpack-board">
+        <div class="board-modpack-name">NOM DU MODPACK</div>
+        <hr class="board-element">
+        <div class="board-element board-author">Par :</div>
+        <div class="board-element board-version">Version :</div>
+        <hr class="board-element">
+        <div class="board-element board-section-title">Sections : </div>
+        <div class="board-element board-sections">
+            <input type="checkbox" id="chk-category" checked disabled>
+            <label class="new-modpack-checkbox-label">Catégorie</label><br>
+
+            <input type="checkbox" id="chk-image" checked disabled>
+            <label class="new-modpack-checkbox-label">Image</label><br>
+
+            <input type="checkbox" id="chk-name" checked disabled>
+            <label class="new-modpack-checkbox-label">Nom du mod</label><br>
+
+            <input type="checkbox" id="chk-type" checked>
+            <label class="new-modpack-checkbox-label">Type</label><br>
+
+            <input type="checkbox" id="chk-description" checked>
+            <label class="new-modpack-checkbox-label">Description</label><br>
+
+            <input type="checkbox" id="chk-installed-version" checked>
+            <label class="new-modpack-checkbox-label">Version installé</label><br>
+
+            <input type="checkbox" id="chk-mod-version">
+            <label class="new-modpack-checkbox-label">Version du mod</label><br>
+
+            <input type="checkbox" id="chk-link" checked>
+            <label class="new-modpack-checkbox-label">Lien du mod</label><br>
+        </div>
+        <hr class="board-element">
+        <button class="board-element board-alter-btn">Modifier des mods</button>
+    </div>
 
     <div class="add-mod-alert" style="display: none">nouveau mod ajouté !</div>
 

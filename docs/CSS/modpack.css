@@ -431,6 +431,16 @@ input:focus::placeholder {
     font-size: 12px;
 }
 
+.board-alter-icon {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    color: black;
+}
+
 .board-element {
     margin-top: 10px;
 }

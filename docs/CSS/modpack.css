@@ -438,7 +438,6 @@ input:focus::placeholder {
     right: 10px;
     top: 10px;
     cursor: pointer;
-    color: black;
 }
 
 .board-element {

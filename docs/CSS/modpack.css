@@ -469,3 +469,13 @@ input:focus::placeholder {
 }
 
 
+.return-btn {
+    position: absolute;
+    right: 50%;
+    transform: translateX(-50%);
+    margin-right: 300px;
+    top: 78px;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}

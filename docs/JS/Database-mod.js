@@ -1,10 +1,40 @@
 const urlParams = new URLSearchParams(window.location.search);
 const modpackName = Array.from(urlParams.keys())[0];
 
-document.querySelector('.modpack-title').textContent = modpackName;
 
 // Récupérez une référence à la base de données Firebase avec le nom du modpack
 const modpackRef = firebase.database().ref('Modpacks/' + modpackName);
+
+document.querySelector('.modpack-title').textContent = modpackName;
+document.querySelector('.board-modpack-name').textContent = modpackName;
+
+// Récupérez une référence à l'élément HTML avec la classe "board-author"
+const authorElement = document.querySelector('.board-author');
+
+// Récupérez une référence à l'élément HTML avec la classe "board-version"
+const versionElement = document.querySelector('.board-version');
+
+// Écoutez les modifications de la valeur de l'auteur dans la base de données Firebase
+modpackRef.child('Settings/Author').on('value', function(snapshot) {
+  const author = snapshot.val();
+  if (author === "") { 
+    authorElement.textContent = '';
+  } else {
+    // Mettez à jour le texte de l'élément HTML avec la valeur de l'auteur
+    authorElement.textContent = 'Par : ' + author;
+    }
+});
+
+// Écoutez les modifications de la valeur de la version dans la base de données Firebase
+modpackRef.child('Settings/Version').on('value', function(versionSnapshot) {
+    const version = versionSnapshot.val();
+    if (version === "") { 
+        versionElement.textContent = '';
+      } else {
+        // Mettez à jour le texte de l'élément HTML avec la valeur de la version
+        versionElement.textContent = 'Version : ' + version;
+      }
+});
 
 // Sélectionnez le conteneur global pour les mods
 const elementListContainer = document.querySelector('.all-mods');

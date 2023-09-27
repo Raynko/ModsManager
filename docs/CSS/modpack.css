@@ -158,7 +158,6 @@ body {
     border-radius: 3px;
     width: 30px;
     height: 30px;
-    margin: 5px;
     transition: transform 0.2s;
 }
 
@@ -167,6 +166,9 @@ body {
 }
 
 .element-name{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 13px;
     color: white;
 }
 
@@ -411,10 +413,33 @@ input:focus::placeholder {
     background: rgba(255, 255, 255, 0.815);
 }
 
+.edit-btn {
+    background: rgba(151, 151, 231, 0.315) ;
+}
+
+.edit-btn:hover {
+    background: rgba(151, 151, 231, 0.555);
+}
+
+.edit-btn:active {
+    background: rgba(151, 151, 231, 0.815);
+}
+
+.delete-btn {
+    background: rgba(255, 85, 85, 0.315) ;
+}
+
+.delete-btn:hover {
+    background: rgba(255, 85, 85, 0.555);
+}
+
+.delete-btn:active {
+    background: rgba(255, 85, 85, 0.815);
+}
+
 .alter-icon {
     height: 15px;
     width: 15px;
-    color: white;
 }
 
 .modpack-board {
@@ -442,6 +467,11 @@ input:focus::placeholder {
 
 .board-element {
     margin-top: 10px;
+}
+
+.board-modpack-name {
+    font-size: 18px;
+    margin-top: -5px;
 }
 
 .board-sections {

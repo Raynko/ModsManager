@@ -468,7 +468,6 @@ input:focus::placeholder {
     background-color: rgba(165, 165, 165, 0.555);
 }
 
-
 .return-btn {
     position: absolute;
     right: 50%;

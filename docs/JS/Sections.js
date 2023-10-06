@@ -1,5 +1,5 @@
 // Sélectionnez le bouton "Modifier des mods"
-var modifyButton = document.querySelector(".board-element.board-alter-btn");
+var modifyButton = document.querySelector(".board-alter-btn");
 
 // Sélectionnez la div avec l'ID "header-alter"
 var headerAlterDiv = document.getElementById("header-alter");
@@ -34,3 +34,20 @@ modifyButton.addEventListener("click", function () {
         }
     });
 });
+
+// indicateur de l'état actuel des Alters
+var isAlterActive = false;
+
+// Ajoutez un gestionnaire d'événements au bouton "Modifier des mods"
+modifyButton.addEventListener("click", function () {
+    // Inversez l'état actuel (vert ou non)
+    isAlterActive = !isAlterActive;
+
+    if (isAlterActive) {
+        modifyButton.style.outline = "2px dashed #ad2b89";  
+    } else {
+        modifyButton.style.outline = "none";
+    }
+});
+
+

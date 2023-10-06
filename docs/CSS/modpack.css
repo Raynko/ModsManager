@@ -494,6 +494,7 @@ input:focus::placeholder {
     border: none;
     border-radius: 3px;
     cursor: pointer;
+    outline-offset: 0.2em;
 }
 
 .board-alter-btn:hover {

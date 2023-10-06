@@ -160,6 +160,7 @@ categoriesRef.on('value', (snapshot) => {
             }
 
             SynchScroll();
+            GetAllCellAlter();
         });
     });
 });

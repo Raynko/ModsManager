@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.getElementById('search-curseforge-field');
     const imageField = document.getElementById('image-field');
     const nameField = document.getElementById('name-field');
+    const linkField = document.getElementById('link-field');
     const alertModNotFound = document.getElementById('alert-mod-not-found');
   
     searchForm.addEventListener('submit', function (e) {
@@ -32,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Remplit les champs d'image et de nom du mod avec les données récupérées
         imageField.value = data.data.logo.thumbnailUrl;
         nameField.value = data.data.name;
+        linkField.value = data.data.links.websiteUrl;
 
         // Efface le champ de recherche après la soumission
         searchInput.value = '';

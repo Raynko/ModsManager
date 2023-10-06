@@ -469,6 +469,12 @@ input:focus::placeholder {
     margin-top: 10px;
 }
 
+.board-line {
+    height: 1px;
+    background-color: rgb(23, 145, 108);
+    border: none;
+}
+
 .board-modpack-name {
     font-size: 18px;
     margin-top: -5px;

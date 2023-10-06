@@ -1,53 +1,68 @@
-// Sélectionnez le bouton "Modifier des mods"
-var modifyButton = document.querySelector(".board-alter-btn");
+//Tous les Chk
+var imageChk = document.getElementById("chk-image");
+var typeChk = document.getElementById("chk-type");
+var descriptionChk = document.getElementById("chk-description");
+var installedVersionChk = document.getElementById("chk-installed-version");
+var modVersionChk = document.getElementById("chk-mod-version");
+var linkChk = document.getElementById("chk-link");
 
-// Sélectionnez la div avec l'ID "header-alter"
-var headerAlterDiv = document.getElementById("header-alter");
+//tous les fields
+var imageField = document.getElementById("image-field");
+var typeField = document.getElementById("type-field");
+var descriptionField = document.getElementById("description-field");
+var installedVersionField = document.getElementById("installed-version-field");
+var modVersionField = document.getElementById("version-field");
+var linkField = document.getElementById("link-field");
 
-var cellAlterDivs;
+//Tous les header
+var imageHeader = document.getElementById("header-image");
+var typeHeader = document.getElementById("header-type");
+var descriptionHeader = document.getElementById("header-description");
+var installedVersionHeader = document.getElementById("header-installed-version");
+var modVersionHeader = document.getElementById("header-mod-version");
+var linkHeader = document.getElementById("header-link");
 
-// Sélectionnez toutes les div avec la classe "cell-alter"
-function GetAllCellAlter() {
-    cellAlterDivs = document.querySelectorAll(".cell-alter");
+//Toutes les cell-...
+var imageCell;
+var typeCell;
+var descriptionCell;
+var installedVersionCell;
+var modVersionCell;
+var linkCell;
+
+// Sélectionnez toutes les div avec la classe "cell-..."
+function GetAllElementClass() {
+    imageCell = document.querySelectorAll(".cell-image");
+    typeCell = document.querySelectorAll(".cell-type");
+    descriptionCell = document.querySelectorAll(".cell-desc");
+    installedVersionCell = document.querySelectorAll(".cell-installed-version");
+    modVersionCell = document.querySelectorAll(".cell-version");
+    linkCell = document.querySelectorAll(".cell-link");
 }
 
-// Ajoutez un gestionnaire d'événements au bouton "Modifier des mods"
-modifyButton.addEventListener("click", function () {
-    // Vérifiez si la div avec l'ID "header-alter" est en "flex"
-    if (headerAlterDiv.style.display === "flex") {
-        // Si oui, change son style à "none"
-        headerAlterDiv.style.display = "none";
-    } else {
-        // Sinon, change son style à "flex"
-        headerAlterDiv.style.display = "flex";
-    }
-
-    // Pour chaque div avec la classe "cell-alter"
-    cellAlterDivs.forEach(function (cellAlterDiv) {
-        // Vérifiez si la div est en "flex"
-        if (cellAlterDiv.style.display === "flex") {
-            // Si oui, change son style à "none"
-            cellAlterDiv.style.display = "none";
+// Fonction pour gérer l'affichage en fonction de la case à cocher
+function handleCheckboxDisplay(checkbox, field, header, cells) {
+    checkbox.addEventListener("change", function () {
+        if (checkbox.checked) {
+            field.style.display = "flex";
+            header.style.display = "flex";
+            Array.from(cells).forEach(function (cell) {
+                cell.style.display = "flex";
+            });
         } else {
-            // Sinon, change son style à "flex"
-            cellAlterDiv.style.display = "flex";
+            field.style.display = "none";
+            header.style.display = "none";
+            Array.from(cells).forEach(function (cell) {
+                cell.style.display = "none";
+            });
         }
     });
-});
+}
 
-// indicateur de l'état actuel des Alters
-var isAlterActive = false;
-
-// Ajoutez un gestionnaire d'événements au bouton "Modifier des mods"
-modifyButton.addEventListener("click", function () {
-    // Inversez l'état actuel (vert ou non)
-    isAlterActive = !isAlterActive;
-
-    if (isAlterActive) {
-        modifyButton.style.outline = "2px dashed #ad2b89";  
-    } else {
-        modifyButton.style.outline = "none";
-    }
-});
-
-
+// Appeler la fonction pour chaque élément
+handleCheckboxDisplay(imageChk, imageField, imageHeader, imageCell);
+handleCheckboxDisplay(typeChk, typeField, typeHeader, typeCell);
+handleCheckboxDisplay(descriptionChk, descriptionField, descriptionHeader, descriptionCell);
+handleCheckboxDisplay(installedVersionChk, installedVersionField, installedVersionHeader, installedVersionCell);
+handleCheckboxDisplay(modVersionChk, modVersionField, modVersionHeader, modVersionCell);
+handleCheckboxDisplay(linkChk, linkField, linkHeader, linkCell);

@@ -46,13 +46,13 @@ function handleCheckboxDisplay(checkbox, field, header, cells) {
         if (checkbox.checked) {
             field.style.display = "flex";
             header.style.display = "flex";
-            Array.from(cells).forEach(function (cell) {
+            cells.forEach(function (cell) {
                 cell.style.display = "flex";
             });
         } else {
             field.style.display = "none";
             header.style.display = "none";
-            Array.from(cells).forEach(function (cell) {
+            cells.forEach(function (cell) {
                 cell.style.display = "none";
             });
         }

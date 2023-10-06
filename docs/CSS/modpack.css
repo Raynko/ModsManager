@@ -166,8 +166,8 @@ body {
 }
 
 .element-name{
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 12px;
+    margin-bottom: 12px;
     font-size: 13px;
     color: white;
 }
@@ -317,7 +317,7 @@ option {
     position: absolute;
     margin-bottom: 30px;
     font-size: 9px;
-    top: 48px;
+    top: 89px;
 }
 
 ::placeholder {
@@ -507,4 +507,40 @@ input:focus::placeholder {
     height: 30px;
     width: 30px;
     cursor: pointer;
+}
+
+#search-curseforge-field {
+    padding: 8px;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	color: #ffffff;
+	font-size: 13px;
+    border: none;
+    outline: none;
+    background-color: #00000018;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.486);
+    width: 100px;
+    text-align: center;
+}
+
+#search-curseforge-button {
+    height: 29px;
+    width: 30px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    background-color: #7a2060c5;
+    box-shadow: rgb(56, 10, 48) 0px 4px;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+#search-curseforge-button:active{
+    box-shadow: 0 2px rgb(56, 10, 48);
+    transform: translateY(2px);
+}
+
+.search-icon {
+    height: 18px;
+    width: 18px;
 }

@@ -6,8 +6,7 @@
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
   text-shadow: 
-					  2px 2px rgb(17, 109, 90),
-						4px 4px #000000;
+					  0 0 rgb(17, 109, 90);
 }
 
 .underline-sweet-title {

@@ -89,6 +89,13 @@
 
     <!-- Formulaire pour ajouter un nouvel élément -->
     <div id="add-mod-form">
+
+        <!-- Recherche Curseforge -->
+        <form id="serch-curseforge">
+            <input type="text" id="search-curseforge-field" placeholder="Mod ID" autocomplete="off" required>
+            <button type="submit" id="search-curseforge-button"><img class="search-icon" src="IMG/ICON/search.png"></button>
+        </form>
+
         <div class="add-mod-title">Ajouter un Mod</div>
         <hr class="add-mod-line">
 
@@ -151,5 +158,6 @@
     <script src="JS/Database-connect.js"></script>
     <script src="JS/Database-mod.js"></script>
     <script src="JS/Scripts.js"></script>
+    <script src="JS/GetCurseforge.js"></script>
 </body>
 </html>

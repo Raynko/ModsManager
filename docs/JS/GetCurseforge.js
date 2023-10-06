@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.getElementById('search-curseforge-field');
     const imageField = document.getElementById('image-field');
     const nameField = document.getElementById('name-field');
+    const alertModNotFound = document.getElementById('alert-mod-not-found');
   
     searchForm.addEventListener('submit', function (e) {
       e.preventDefault(); // Empêche la soumission du formulaire par défaut
@@ -34,10 +35,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Efface le champ de recherche après la soumission
         searchInput.value = '';
+
+        // Cache la div d'alerte car le mod est trouvé
+        alertModNotFound.style.display = 'none';
       })
       .catch(function (error) {
         console.error(error);
-        // Gérez l'erreur (par exemple, affichez un message à l'utilisateur)
+        // Affiche la div d'alerte car le mod n'est pas trouvé
+        alertModNotFound.style.display = 'block';
       });
     });
   });

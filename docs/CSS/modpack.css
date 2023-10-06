@@ -544,3 +544,11 @@ input:focus::placeholder {
     height: 18px;
     width: 18px;
 }
+
+#alert-mod-not-found {
+    color: rgb(255, 0, 0);
+    position: absolute;
+    font-size: 12px;
+    top: 20px;
+    right: 10px;
+}

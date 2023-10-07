@@ -74,3 +74,41 @@ function verifyCheckBox(checkbox, field, header, cells) {
         });
     }
 } 
+
+// Fonction pour récupérer les valeurs des cases à cocher depuis la base de données Firebase
+function getCheckboxValuesFromFirebase() {
+    modpackRef.child('Settings/Section').once('value', function(snapshot) {
+        const sectionData = snapshot.val();
+
+        // Mettez à jour les cases à cocher en fonction des données récupérées
+        imageChk.checked = sectionData.image;
+        typeChk.checked = sectionData.type;
+        descriptionChk.checked = sectionData.description;
+        installedVersionChk.checked = sectionData['version-installed'];
+        modVersionChk.checked = sectionData['mod-version'];
+        linkChk.checked = sectionData.link;
+    });
+}
+
+// Fonction pour mettre à jour la base de données Firebase lorsque les cases à cocher sont modifiées
+function updateFirebaseFromCheckboxes() {
+    modpackRef.child('Settings/Section').update({
+        image: imageChk.checked,
+        type: typeChk.checked,
+        description: descriptionChk.checked,
+        'version-installed': installedVersionChk.checked,
+        'mod-version': modVersionChk.checked,
+        link: linkChk.checked
+    });
+}
+
+// Ajoutez des gestionnaires d'événements pour les cases à cocher
+imageChk.addEventListener("change", updateFirebaseFromCheckboxes);
+typeChk.addEventListener("change", updateFirebaseFromCheckboxes);
+descriptionChk.addEventListener("change", updateFirebaseFromCheckboxes);
+installedVersionChk.addEventListener("change", updateFirebaseFromCheckboxes);
+modVersionChk.addEventListener("change", updateFirebaseFromCheckboxes);
+linkChk.addEventListener("change", updateFirebaseFromCheckboxes);
+
+// Appelez la fonction pour récupérer les valeurs des cases à cocher depuis la base de données Firebase lors du chargement de la page
+document.addEventListener("DOMContentLoaded", getCheckboxValuesFromFirebase);

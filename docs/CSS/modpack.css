@@ -166,10 +166,14 @@ body {
 }
 
 .element-name{
+    text-align: left;
+    justify-content: left;
+    align-items: left;
     margin-top: 12px;
     margin-bottom: 12px;
     font-size: 13px;
     color: white;
+    padding-left: 5px;
 }
 
 .element-type{

@@ -38,6 +38,14 @@ function GetAllElementClass() {
     installedVersionCell = document.querySelectorAll(".cell-installed-version");
     modVersionCell = document.querySelectorAll(".cell-version");
     linkCell = document.querySelectorAll(".cell-link");
+
+    // Appeler la fonction pour chaque élément
+    handleCheckboxDisplay(imageChk, imageField, imageHeader, imageCell);
+    handleCheckboxDisplay(typeChk, typeField, typeHeader, typeCell);
+    handleCheckboxDisplay(descriptionChk, descriptionField, descriptionHeader, descriptionCell);
+    handleCheckboxDisplay(installedVersionChk, installedVersionField, installedVersionHeader, installedVersionCell);
+    handleCheckboxDisplay(modVersionChk, modVersionField, modVersionHeader, modVersionCell);
+    handleCheckboxDisplay(linkChk, linkField, linkHeader, linkCell);
 }
 
 // Fonction pour gérer l'affichage en fonction de la case à cocher
@@ -58,11 +66,3 @@ function handleCheckboxDisplay(checkbox, field, header, cells) {
         }
     });
 }
-
-// Appeler la fonction pour chaque élément
-handleCheckboxDisplay(imageChk, imageField, imageHeader, imageCell);
-handleCheckboxDisplay(typeChk, typeField, typeHeader, typeCell);
-handleCheckboxDisplay(descriptionChk, descriptionField, descriptionHeader, descriptionCell);
-handleCheckboxDisplay(installedVersionChk, installedVersionField, installedVersionHeader, installedVersionCell);
-handleCheckboxDisplay(modVersionChk, modVersionField, modVersionHeader, modVersionCell);
-handleCheckboxDisplay(linkChk, linkField, linkHeader, linkCell);

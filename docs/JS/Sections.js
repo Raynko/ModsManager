@@ -50,19 +50,27 @@ function GetAllElementClass() {
 
 // Fonction pour gérer l'affichage en fonction de la case à cocher
 function handleCheckboxDisplay(checkbox, field, header, cells) {
+
+    verifyCheckBox(checkbox, field, header, cells);
+
     checkbox.addEventListener("change", function () {
-        if (checkbox.checked) {
-            field.style.display = "flex";
-            header.style.display = "flex";
-            cells.forEach(function (cell) {
-                cell.style.display = "flex";
-            });
-        } else {
-            field.style.display = "none";
-            header.style.display = "none";
-            cells.forEach(function (cell) {
-                cell.style.display = "none";
-            });
-        }
+        verifyCheckBox(checkbox, field, header, cells);
     });
 }
+
+// Fonction pour vérifier les checkboxs
+function verifyCheckBox(checkbox, field, header, cells) {
+    if (checkbox.checked) {
+        field.style.display = "flex";
+        header.style.display = "flex";
+        cells.forEach(function (cell) {
+            cell.style.display = "flex";
+        });
+    } else {
+        field.style.display = "none";
+        header.style.display = "none";
+        cells.forEach(function (cell) {
+            cell.style.display = "none";
+        });
+    }
+} 

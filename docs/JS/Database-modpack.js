@@ -1,6 +1,3 @@
-// Récupérez une référence à la base de données Firebase
-const database = firebase.database();
-
 // Référence aux nœuds "Modpack-Settings" pour les options d'auteur et de version
 const authorRef = database.ref('Modpack-Settings/Author');
 const versionRef = database.ref('Modpack-Settings/Modpack-Version');

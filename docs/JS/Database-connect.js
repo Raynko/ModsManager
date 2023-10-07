@@ -10,3 +10,6 @@ const firebaseConfig = {
 
 // Initialisez Firebase
 firebase.initializeApp(firebaseConfig);
+
+// Récupérez une référence à la base de données Firebase
+const database = firebase.database();

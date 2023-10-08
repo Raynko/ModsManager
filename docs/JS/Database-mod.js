@@ -143,6 +143,7 @@ categoriesRef.on('value', (snapshot) => {
                     modElement.querySelector('.element-desc').textContent = modData.description;
                     modElement.querySelector('.element-version').textContent = modData['version-installed'];
                     modElement.querySelector('.element-link').href = modData.link;
+                    modElement.querySelector('.delete-btn').setAttribute('onclick', 'ShowDeleteConfirmPanel(\'' + modSnapshot.key + '\')');
 
                     // Ajoutez l'élément mod au conteneur des mods de cette catégorie
                     modsContainer.appendChild(modElement);

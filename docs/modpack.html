@@ -151,7 +151,7 @@
             <div class="all-alter-btn">
                 <button class="alter-btn"><img class="alter-icon" src="IMG/ICON/plugin.png"></button>
                 <button class="alter-btn edit-btn"><img class="alter-icon" src="IMG/ICON/edit.png"></button>
-                <button class="alter-btn delete-btn"><img class="alter-icon" src="IMG/ICON/trash.png"></button>
+                <button class="alter-btn delete-btn" onclick="ShowDeleteConfirmPanel()"><img class="alter-icon" src="IMG/ICON/trash.png"></button>
             </div>
         </div>
     
@@ -166,8 +166,15 @@
     </div>
 
     <!-- Delete mod panel -->
-    <div class="delete-confirm-panel-background">
-        
+    <div id="delete-confirm-background" style="display: none;">
+        <div class="delete-confirm-panel">
+            <img class="delete-confirm-icon" src="IMG/ICON/trash.png">
+            <div class="delete-confirm-title">
+            Supprimer MODNAME ?</div>
+            <hr class="delete-confirm-board-line">
+            <button id="delete-confirm-btn-yes" class="delete-confirm-btn" onclick="">Supprimer !</button>
+            <button id="delete-confirm-btn-no" class="delete-confirm-btn" onclick="HideDeleteConfirmPanel()">Annuler</button>
+        </div>
     </div>
 
     <script src="JS/Database-connect.js"></script>
@@ -177,5 +184,6 @@
     <script src="JS/AltersDisplay.js"></script>
     <script src="JS/Sections.js"></script>
     <script src="JS/BackupFireBaseJSON.js"></script>
+    <script src="JS/AlterScripts.js"></script>
 </body>
 </html>

@@ -7,6 +7,7 @@ const modpackRef = firebase.database().ref('Modpacks/' + modpackName);
 
 document.querySelector('.modpack-title').textContent = modpackName;
 document.querySelector('.board-modpack-name').textContent = modpackName;
+var alertmessage = document.querySelector('.add-mod-alert');
 
 // Récupérez une référence à l'élément HTML avec la classe "board-author"
 const authorElement = document.querySelector('.board-author');
@@ -285,11 +286,12 @@ addModForm.addEventListener('submit', async (e) => {
             linkInput.value = '';
 
             // Afficher l'alerte d'ajout de mod
-            document.querySelector('.add-mod-alert').style.display = "block";
+            alertmessage.innerHTML = "nouveau mod ajouté !"
+            alertmessage.style.display = "block";
 
             // Cacher l'alerte après 3 secondes
             setTimeout(() => {
-                document.querySelector('.add-mod-alert').style.display = "none";
+                alertmessage.style.display = "none";
             }, 3000);
                         
             categoryDropdown.selectedIndex = 0;

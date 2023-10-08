@@ -1,6 +1,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 const modpackName = Array.from(urlParams.keys())[0];
 
+document.getElementById('title-tab').textContent = modpackName;
 
 // Récupérez une référence à la base de données Firebase avec le nom du modpack
 const modpackRef = firebase.database().ref('Modpacks/' + modpackName);

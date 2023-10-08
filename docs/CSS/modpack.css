@@ -74,7 +74,7 @@ body {
 }
 
 .all-mods {
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(8px);
     background-color: rgba(41, 36, 36, 0.664);
     padding: 20px;
     padding-top: 0;

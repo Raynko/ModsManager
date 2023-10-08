@@ -619,9 +619,9 @@ input:focus::placeholder {
 .delete-confirm-icon {
     position: absolute;
     height: 50px;
-    top: -25px;
+    top: -15px;
     left: -25px;
-    transform: rotate(-20deg);
+    transform: rotate(-15deg);
 }
 
 .delete-confirm-title{
